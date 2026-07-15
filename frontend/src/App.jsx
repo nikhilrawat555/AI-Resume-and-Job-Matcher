@@ -20,7 +20,7 @@ function App() {
       const formData = new FormData()
       formData.append('resume', resume)
       formData.append('jobDescription', jobDescription)
-      const API_BASE = import.meta.env.VITE_API_URL || 'https://ai-resume-and-job-matcher.onrender.com';
+      const API_BASE = import.meta.env.VITE_API_URL || 'https://ai-resume-and-job-matcher-1.onrender.com';
       const res = await axios.post(`${API_BASE}/api/analyze`, formData)
       setResult(res.data.data)
     } catch (err) {
