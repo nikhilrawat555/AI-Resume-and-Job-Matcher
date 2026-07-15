@@ -20,7 +20,8 @@ function App() {
       const formData = new FormData()
       formData.append('resume', resume)
       formData.append('jobDescription', jobDescription)
-      const res = await axios.post('https://ai-resume-and-job-matcher.onrender.com/api/analyze', formData)
+      const API_BASE = import.meta.env.VITE_API_URL || 'https://ai-resume-and-job-matcher.onrender.com';
+      const res = await axios.post(`${API_BASE}/api/analyze`, formData)
       setResult(res.data.data)
     } catch (err) {
       setError('Something went wrong. Please make sure the backend server is running.')
